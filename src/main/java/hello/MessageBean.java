@@ -16,45 +16,36 @@ import java.io.Serializable;
  */
 public class MessageBean implements Serializable {
      
-    private String aut;
-    private String lang;
     private String msg;
-    private String msg2;
         
     public MessageBean() {
     }
     
-    public String getAut() {
-        return "José Viterbo";
+    public String getMsg() {
+        return msg;
     }
     
-    public void setLang(String value) {
-        lang = value;
-    }
-    public String getMsg() {
-        switch (this.lang){
+    public void setMsg(String value) {
+        switch (value){
+            case "":
             case "pt":
-                return "Alô";
+                msg = "Alô";
+                break;
             case "en":
-                return "Hello";
+                msg = "Hello";
+                break;
             case "de":
-                return "Hallo";
+                msg = "Hallo";
+                break;
             case "fr":
-                return "Bonjour";
+                msg = "Bonjour";
+                break;
+            case "it":
+                msg = "Buongiorno, ";
+                break;
+            case "es":
+                msg = "¡buen día!, ";
+                break;    
         }
-        return "";
-    }
-    public String getMsg2() {
-        switch (this.lang){
-            case "pt":
-                return "Elaborado por";
-            case "en":
-                return "Created by";
-            case "de":
-                return "Erstellt von";
-            case "fr":
-                return "Créé par";
-        }
-        return "";
     }
 }
